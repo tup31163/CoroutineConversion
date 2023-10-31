@@ -26,11 +26,15 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.revealButton).setOnClickListener{
             Thread{
-                repeat(100) {
-                    handler.sendEmptyMessage(it)
-                    Thread.sleep(40)
-                }
+                reveal()
             }.start()
+        }
+    }
+
+    fun reveal() {
+        repeat(100) {
+            handler.sendEmptyMessage(it)
+            Thread.sleep(40)
         }
     }
 }
