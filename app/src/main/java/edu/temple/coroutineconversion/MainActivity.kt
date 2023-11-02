@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     //TODO (Refactor to replace Thread code with coroutines)
 
-    lateinit var cakeImageView: ImageView
+    private lateinit var cakeImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    suspend fun reveal() {
+    private suspend fun reveal() {
         repeat(100) {
             withContext(Dispatchers.Main) { cakeImageView.alpha = it / 100f }
             delay(40)
